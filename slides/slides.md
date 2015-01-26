@@ -98,5 +98,5 @@ function nextNumber (x) {
 # Undefined values
 * `undefined`, `null`
 * used to indicate lack of value
-* difference is sublte and mostly unimportant
+* difference is subtle and mostly unimportant
 * use `null`
