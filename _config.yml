@@ -1,0 +1,13 @@
+# Site settings
+title: Learn JavaScript
+email: tom@shen.io
+description: >
+  A tutorial teaching the basics of programming in JavaScript. Written by Tom
+  Shen for Eddy Man Kim's Design Communication course at CMU.
+baseurl: "/learnjs" # the subpath of your site, e.g. /blog/
+url: "http://www.tomshen.me" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
