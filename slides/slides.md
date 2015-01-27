@@ -105,6 +105,7 @@ var one = 1;
 # `String`
 * text: `'design'`, `"communication"`
 * must be surrounded by *matching* single or double quotes
+* characters are strings of one letter/symbol
 * all the text must fit on one line:
 
 ```js
@@ -203,6 +204,30 @@ car['make'] === 'Ford'
     * `[1, 2, 3]`
 * can hold values of different types:
     * `['foo', 'bar', -1, false]`
+```js
+var clothes = ['shirt', 'pants', 'socks'];
+clothes[0] === 'shirt'; // 0 is is the index of 'shirt'
+clothes.indexOf('shirt') === 0;
+clothes.indexOf('shoes') === -1;
+clothes.length === 3;
+```
+
+---
+
+# `Object`: `Array`
+* `array.push(value)` adds `value` to the end of `array`
+* `array.pop()` removes the last element of `array` and returns it
+* `array.reverse()` reverses `array`
+* `array.sort(compareFunction)` sorts the array, given a function `compareFunction`:
+```js
+function compareFunction (a, b) {
+    if (a is less than b by some ordering criterion)
+        return -1;
+    if (a is greater than b by the ordering criterion)
+        return 1;
+    return 0;
+}
+```
 
 ---
 
@@ -251,7 +276,7 @@ setTimeout(function () {
 function WashingMachine() {
     this.contents = [];
     this.running = false;
-}
+} // This function is called a constructor
 
 var washingMachine = new WashingMachine();
 ```
@@ -356,6 +381,11 @@ if (running) {
 } else {
     console.log('not running');
 }
+
+if (running)
+    console.log('running');
+else
+    console.log('not running')
 ```
 * other control statements include `switch/continue/break`, `throw`, and `try/catch`
 * don't worry about them for now
@@ -370,11 +400,13 @@ var x = 0;
 while (x < 10) {
     x = x + 1;
 }
-
 var sum = 0;
 for (var i = 0; i < 10; i++) {
     sum += i;
 }
+var car = { ... };
+for (var key in car)
+    console.log(key, car[key]);
 ```
 
 ---
