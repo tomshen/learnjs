@@ -4,13 +4,18 @@ body {
 }
 
 .remark-slide-content ul,ol,p {
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: Lato, Helvetica, Arial, sans-serif;
     font-weight: normal;
 }
-.remark-code, .remark-inline-code {
-    font-family: monospace;
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.remark-code {
+    font-size: 1.2rem;
 }
