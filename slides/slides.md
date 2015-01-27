@@ -145,6 +145,7 @@ And this the second
 * `===`, `<`, `>`, `<=`, `>=`
 * `+`
 * `!`, `&&`, `||`
+* `==` can be used to check for equality, but has inconsistent behavior
 
 ---
 
@@ -232,6 +233,54 @@ var y = nextNumber(1);
 
 ---
 
+# Higher-order Functions
+* Since functions are values, they can be used as input to a function or be the out put of a function
+```js
+setTimeout(function () {
+    washingMachine.empty();
+}, 1000 * 60 * 60);
+```
+
+---
+
+# Defining New Objects
+* `Function`s are technically `Object`s too
+* `this` can be used to refer to an `Object`'s properties
+
+```js
+function WashingMachine() {
+    this.contents = [];
+    this.running = false;
+}
+
+var washingMachine = new WashingMachine();
+```
+
+* `new` means to create a new *instance* of `WashingMachine`
+* `WashingMachine` is a *prototype* for building instances of washing machine objects
+* on every instance of `WashingMachine`, `contents` and `running` are *properties* defined on it
+* `washingMachine.contents` is `[]`, and `washingMachine.running` is `false`
+
+---
+
+# Defining Methods on Objects
+* *methods* are `Function`s defined on `Object`s
+* they let you define ways to manipulate the data stored in an object's properties
+
+```js
+WashingMachine.prototype.add = function (item) {
+    this.contents.push(item);
+    console.log('Adding', item)
+};
+
+washingMachine.add('tide');
+```
+
+* `add` is a method defined on the prototype of `WashingMachine`
+* this means when we construct new instances of `WashingMachine`, they will have `add` defined on them
+
+---
+
 # `console.log`
 * takes in one or more values as inputs
 * converts all of them to `String`s
@@ -255,6 +304,13 @@ var y = nextNumber(1);
 * `Boolean(b).toString()` converts the `Boolean` `b` to a `String`
 * `JSON.stringify(o)` converts the `Object` `o` to a `String`
 * `JSON.parseJSON(s)` converts the `String` `s` to an `Object`
+
+---
+
+# Falsey
+* non-`Boolean` values that can be treated as false
+* `0`, `''`, `undefined`, `null`
+* Note that none of them are `===` to false
 
 ---
 
@@ -337,44 +393,6 @@ var x = /* ignore me */ 6;
 these lines 
 too */
 ```
-
----
-
-# Defining New Objects
-* `Function`s are technically `Object`s too
-* `this` can be used to refer to an `Object`'s properties
-
-```js
-function WashingMachine() {
-    this.contents = [];
-    this.running = false;
-}
-
-var washingMachine = new WashingMachine();
-```
-
-* `new` means to create a new *instance* of `WashingMachine`
-* `WashingMachine` is a *prototype* for building instances of washing machine objects
-* on every instance of `WashingMachine`, `contents` and `running` are *properties* defined on it
-* `washingMachine.contents` is `[]`, and `washingMachine.running` is `false`
-
----
-
-# Defining Methods on Objects
-* *methods* are `Function`s defined on `Object`s
-* they let you define ways to manipulate the data stored in an object's properties
-
-```js
-WashingMachine.prototype.add = function (item) {
-    this.contents.push(item);
-    console.log('Adding', item)
-};
-
-washingMachine.add('tide');
-```
-
-* `add` is a method defined on the prototype of `WashingMachine`
-* this means when we construct new instances of `WashingMachine`, they will have `add` defined on them
 
 ---
 
